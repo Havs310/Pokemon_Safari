@@ -25,26 +25,26 @@ struct state {
 	int zone_pos;
 	int num_psyduck;
 	int num_slowpoke;
-    int num_goldeen;
-    int num_seaking;
-    int num_dratini;
-    int num_dragonair;
-    int num_nidoran_f;
-    int num_nidorina;
-    int num_nidoran_m;
-    int num_nidorino;
-    int num_paras;
-    int num_parasect;
-    int num_doduo;
-    int num_venonat;
-    int num_venomoth;
-    int num_exeggcute;
-    int num_kangaskhan;
-    int num_rhyhorn;
-    int num_chansey;
-    int num_scyther;
-    int num_pinsir;
-    int num_tauros;
+	int num_goldeen;
+	int num_seaking;
+	int num_dratini;
+	int num_dragonair;
+	int num_nidoran_f;
+	int num_nidorina;
+	int num_nidoran_m;
+	int num_nidorino;
+	int num_paras;
+	int num_parasect;
+	int num_doduo;
+	int num_venonat;
+	int num_venomoth;
+	int num_exeggcute;
+	int num_kangaskhan;
+	int num_rhyhorn;
+	int num_chansey;
+	int num_scyther;
+	int num_pinsir;
+	int num_tauros;
 	int repel;
 };
 
@@ -540,7 +540,7 @@ int main() {
 	int fish = 0;
 	int success = 100;
 	int pokemon;
-    srand( time(0) );
+	srand( time(0) );
 	game.x_pos = 19;
 	game.y_pos = 26;
 	game.zone_pos = 1;
@@ -579,17 +579,18 @@ int main() {
 		printf("Please input a correct command (y/n): ");
 		scanf("%c%c", &input, &junk);
 	}
-		if (input == 'y') {
-			load();
-			printf("Progress has been loaded!\n");
-			printf("Welcome to the world of Pokemon!\n");
-			printf("Press Enter to play!");
-			scanf("%c", &junk);
-		} else if (input == 'n') {
-			printf("Welcome to the world of Pokemon!\n");
-			printf("Press Enter to play!");
-			scanf("%c", &junk);
-		}
+	if (input == 'y') {
+		load();
+		printf("Progress has been loaded!\n");
+		printf("Welcome to the world of Pokemon!\n");
+		printf("Press Enter to play!");
+		scanf("%c", &junk);
+	} else if (input == 'n') {
+		printf("Welcome to the world of Pokemon!\n");
+		printf("Press Enter to play!");
+		scanf("%c", &junk);
+	}
+	
 	while (options != 'x') {
 
 		capture = 100;
@@ -3795,7 +3796,7 @@ int zone4tozone3(int x, int y) {
 }
 
 ///////
-
+// future have a general check if grass and send the zone you're in as a parameter
 int checkifgrass1(int x, int y) {
 	return zone1[y][x] == 'X';
 }
@@ -3809,6 +3810,7 @@ int checkifgrass4(int x, int y) {
 	return zone4[y][x] == 'X';
 }
 
+// future have a general check if water and send what zone you are in as a parameter
 int checkifwater1(int x, int y) {
 	return zone1[y][x] == 'W';
 }
@@ -3822,6 +3824,7 @@ int checkifwater4(int x, int y) {
 	return zone4[y][x] == 'W';
 }
 
+// in the future implement just a general random function and send a parameter for what it should be out of
 int grassrand() {
 	return rand() % (5 + 1 - 1) + 1;
 }
@@ -3847,7 +3850,7 @@ void rundot() {
 				printf("%c", dot[row][col]);
 			}
 		}
-	printf("\n");
+		printf("\n");
 	}
 }
 
@@ -3860,7 +3863,7 @@ void rundotdot() {
 				printf("%c", dotdot[row][col]);
 			}
 		}
-	printf("\n");
+		printf("\n");
 	}
 }
 
@@ -3889,6 +3892,7 @@ void runsuccess() {
 	printf("\n");
 	}
 }
+
 void runfailure() {
 	for (row=0; row<22; row++) {
 		for (col=0; col<50; col++) {
@@ -3901,6 +3905,7 @@ void runfailure() {
 	printf("\n");
 	}
 }
+
 // this didn't end up working that well, it's here but it's not implemented, maybe it will be eventually
 void runfishingencounter() {
 	for (i=0; i<10; i++) {
@@ -3934,6 +3939,7 @@ void runfishingencounter() {
 	}
 }
 
+// not implemented
 void rungrassencounter() {
 	for (row=0; row<22; row++) {
 		for (col=0; col<50; col++) {
